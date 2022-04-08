@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.jks.Spo2MonitorEx" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="adnroid.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    <application android:allowBackup="true" android:appComponentFactory="android.support.v4.app.CoreComponentFactory" android:icon="@mipmap/ic" android:isSplitRequired="true" android:label="@string/app_name" android:name="com.jks.Spo2MonitorEx.util.config.Config" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.GuidePage" android:screenOrientation="portrait" android:theme="@style/activity_theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.LoadPage" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.HistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.family.FamilyMainActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.setting.ManageAcountActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.setting.AddAcountActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.family.AddOrUpdateUserActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.user.UserLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.user.UserRegisterEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.user.UserForgetPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.DeviceDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.SleepActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.SleepReportActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.setting.MoreSetPassworldActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jks.Spo2MonitorEx.app.Activity.RemindActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:name="com.jks.Spo2MonitorEx.app.Bluetoothle.BluetoothLEService"/>
+        <service android:name="com.jks.Spo2MonitorEx.util.autoupdate.XdUpdateService"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="522c605504a38e8fd4fa96035de9a319f5d5151f"/>
+        <provider android:authorities="com.jks.Spo2MonitorEx.app.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="8"/>
+    </application>
+</manifest>
